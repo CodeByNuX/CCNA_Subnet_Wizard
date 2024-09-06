@@ -1,2 +1,2 @@
 # CCNA_Subnet_Wizard
-An intuitive way for practicing subnetting for CCNA test takers.
+A user-friendly method for CCNA candidates to practice subnetting, helping to enhance and sharpen their binary skills.
