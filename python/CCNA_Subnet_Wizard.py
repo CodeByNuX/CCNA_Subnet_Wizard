@@ -323,6 +323,8 @@ def main_menu(DIFFICULTY:difficulty):
     while True:
 
         _print_title()
+        print('\n')
+        print("   A magical partner to assist you in mastering subnetting")
 
         #check difficulty setting
         if DIFFICULTY.level == None:
