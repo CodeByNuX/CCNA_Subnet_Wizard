@@ -5,7 +5,12 @@ import random
 from enum import Enum
 from colorama import init
 from termcolor import cprint
-from pyfiglet import figlet_format
+#from pyfiglet import figlet_format
+
+# 9/7/2024 running into an error w/ pyinstaller
+import pyfiglet
+import termcolor
+import colorama
 
 #if stdout is redirected, no colors
 init(strip=not sys.stdout.isatty())
@@ -78,7 +83,26 @@ def _clear_screen():
 
 def _print_title():
     _clear_screen()
-    cprint(figlet_format('CCNA Subnet Wizard!'),'cyan', attrs=['bold'])
+    #pyinstaller issue
+    #cprint(figlet_format('CCNA Subnet Wizard!'),'cyan', attrs=['bold'])
+    titleScreen = '''
+   ____ ____ _   _    _                   
+  / ___/ ___| \ | |  / \                  
+ | |  | |   |  \| | / _ \                 
+ | |__| |___| |\  |/ ___ \                
+  \____\____|_|_\_/_/   \_\____ _____     
+ / ___|| | | | __ )| \ | | ____|_   _|    
+ \___ \| | | |  _ \|  \| |  _|   | |      
+  ___) | |_| | |_) | |\  | |___  | |      
+ |____/ \___/|____/|_| \_|_____|_|_|____  
+ \ \      / /_ _|__  /  / \  |  _ \|  _ \ 
+  \ \ /\ / / | |  / /  / _ \ | |_) | | | |
+   \ V  V /  | | / /_ / ___ \|  _ <| |_| |
+    \_/\_/  |___/____/_/   \_\_| \_\____/ 
+                                          
+    '''
+    #
+    print(titleScreen)
 
 
 def _choose_difficulty()->difficulty:
@@ -324,7 +348,7 @@ def main_menu(DIFFICULTY:difficulty):
 
         _print_title()
         print('\n')
-        print("   A magical partner to assist you in mastering subnetting")
+        print("         * A magical partner to assist you in mastering subnetting")
 
         #check difficulty setting
         if DIFFICULTY.level == None:
