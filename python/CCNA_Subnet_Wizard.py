@@ -3,17 +3,13 @@ import sys
 import ipaddress
 import random
 from enum import Enum
-from colorama import init
-from termcolor import cprint
-#from pyfiglet import figlet_format
 
 # 9/7/2024 running into an error w/ pyinstaller
-import pyfiglet
-import termcolor
-import colorama
-
+#from colorama import init
+#from termcolor import cprint
+#from pyfiglet import figlet_format
 #if stdout is redirected, no colors
-init(strip=not sys.stdout.isatty())
+#init(strip=not sys.stdout.isatty())
 
 
 def random_jokes()->str:
